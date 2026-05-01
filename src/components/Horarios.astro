@@ -1,0 +1,121 @@
+---
+const horarios = [
+  { time: '12:00 – 13:00', label: 'Primer turno' },
+  { time: '13:00 – 14:00', label: 'Segundo turno' },
+  { time: '14:00 – 15:00', label: 'Tercer turno' },
+];
+---
+
+<section class="horarios" id="horarios">
+  <div class="horarios-inner">
+    <div class="horarios-header">
+      <span class="horarios-label">Horario</span>
+      <h2>Horarios de entrega</h2>
+      <p class="horarios-subtitle">Selecciona el más conveniente para ti</p>
+    </div>
+
+    <div class="horarios-grid">
+      {horarios.map((h) => (
+        <div class="horario-card">
+          <span class="horario-time">{h.time}</span>
+          <span class="horario-label">{h.label}</span>
+          <span class="horario-status">Disponible</span>
+        </div>
+      ))}
+    </div>
+
+    <p class="horarios-note">El Shambar se prepara el mismo día de entrega</p>
+  </div>
+</section>
+
+<style>
+  .horarios {
+    padding: var(--space-3xl) var(--space-lg);
+    background: var(--color-bg-primary);
+  }
+
+  .horarios-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .horarios-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .horarios-label {
+    display: block;
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .horarios-header h2 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: var(--space-xs);
+  }
+
+  .horarios-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  .horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .horario-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xl) var(--space-md);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all 0.25s var(--ease-smooth);
+  }
+
+  .horario-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+  }
+
+  .horario-time {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .horario-label {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+  }
+
+  .horario-status {
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-success);
+    margin-top: var(--space-xs);
+  }
+
+  .horarios-note {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--color-text-tertiary);
+  }
+
+  @media (max-width: 600px) {
+    .horarios-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

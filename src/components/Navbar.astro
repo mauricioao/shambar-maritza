@@ -1,0 +1,193 @@
+---
+const phoneNumber = '918380045';
+---
+
+<header class="navbar">
+  <div class="navbar-inner">
+    <a href="#" class="navbar-brand">
+      <span class="brand-text">Shambar</span>
+      <span class="brand-accent">Lince</span>
+    </a>
+
+    <nav class="navbar-nav">
+      <a href="#fechas" class="nav-link">Fechas</a>
+      <a href="#zonas" class="nav-link">Zonas</a>
+      <a href="#horarios" class="nav-link">Horarios</a>
+      <a href="#ordenar" class="nav-cta">Ordenar</a>
+    </nav>
+
+    <button class="navbar-toggle" id="navToggle" aria-label="Menú">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav">
+    <nav>
+      <a href="#fechas">Fechas</a>
+      <a href="#zonas">Zonas</a>
+      <a href="#horarios">Horarios</a>
+      <a href="#ordenar">Ordenar</a>
+      <a href={`https://wa.me/51${phoneNumber}`} class="mobile-contact">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.162-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+        </svg>
+        Contactar
+      </a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(12, 10, 9, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--color-border);
+    transition: all 0.3s var(--ease-smooth);
+  }
+
+  .navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Brand */
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+  }
+
+  .brand-text {
+    color: var(--color-text);
+  }
+
+  .brand-accent {
+    color: var(--color-accent);
+  }
+
+  /* Desktop Nav */
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .nav-link {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-text);
+  }
+
+  .nav-cta {
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 0.8125rem;
+    transition: all 0.2s var(--ease-smooth);
+  }
+
+  .nav-cta:hover {
+    background: var(--color-accent-light);
+    transform: translateY(-1px);
+  }
+
+  /* Toggle */
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: var(--space-sm);
+  }
+
+  .navbar-toggle span {
+    width: 20px;
+    height: 1px;
+    background: var(--color-text-secondary);
+    transition: all 0.2s;
+  }
+
+  /* Mobile Nav */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 10, 9, 0.98);
+    backdrop-filter: blur(30px);
+    z-index: 999;
+    padding: 120px var(--space-lg) var(--space-lg);
+  }
+
+  .mobile-nav.active {
+    display: block;
+  }
+
+  .mobile-nav nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .mobile-nav a {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-text);
+  }
+
+  .mobile-nav .mobile-contact {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-accent);
+    margin-top: var(--space-lg);
+  }
+
+  @media (max-width: 768px) {
+    .navbar-nav {
+      display: none;
+    }
+
+    .navbar-toggle {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  navToggle?.addEventListener('click', () => {
+    mobileNav?.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav?.classList.remove('active');
+    });
+  });
+</script>

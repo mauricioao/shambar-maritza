@@ -1,0 +1,104 @@
+---
+const phoneNumber = '918380045';
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-name">Shambar Lince</span>
+      <span class="footer-tagline">Tradición limeña</span>
+    </div>
+
+    <a href={`https://wa.me/51${phoneNumber}`} class="footer-contact">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.162-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+      </svg>
+      <span>{phoneNumber}</span>
+    </a>
+
+    <p class="footer-copy">&copy; 2026 Shambar Lince</p>
+  </div>
+</footer>
+
+<a href={`https://wa.me/51${phoneNumber}`} class="footer-float" aria-label="WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.162-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+  </svg>
+</a>
+
+<style>
+  .footer {
+    padding: var(--space-2xl) var(--space-lg);
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+    text-align: center;
+  }
+
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.6875rem;
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-contact {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-accent);
+    font-size: 0.875rem;
+    transition: opacity 0.2s;
+  }
+
+  .footer-contact:hover {
+    opacity: 0.8;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+  }
+
+  /* Floating WhatsApp */
+  .footer-float {
+    position: fixed;
+    bottom: var(--space-lg);
+    right: var(--space-lg);
+    width: 52px;
+    height: 52px;
+    background: var(--color-success);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 20px rgba(107, 155, 107, 0.3);
+    z-index: 999;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .footer-float:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 25px rgba(107, 155, 107, 0.4);
+  }
+</style>

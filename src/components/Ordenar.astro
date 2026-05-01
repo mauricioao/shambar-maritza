@@ -1,0 +1,249 @@
+---
+const phoneNumber = '51918380045';
+---
+
+<section class="ordenar" id="ordenar">
+  <div class="ordenar-inner">
+    <div class="ordenar-header">
+      <span class="ordenar-label">Pre-orden</span>
+      <h2>Tu pedido</h2>
+      <p>Completa tus datos y te contactaremos por WhatsApp</p>
+    </div>
+
+    <form class="ordenar-form" id="orderForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Tu nombre" required />
+        </div>
+        
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" placeholder="9XX XXX XXX" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" placeholder="Av. ejemplo 123, Lince" required />
+        <span class="form-hint">Solo delivery en Lince, San Isidro, Jesús María, Cercado</span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cantidad">Porciones</label>
+          <select id="cantidad" required>
+            <option value="" disabled selected>Seleccionar</option>
+            <option value="1">1 porción</option>
+            <option value="2">2 porciones</option>
+            <option value="3">3 porciones</option>
+            <option value="4">4 porciones</option>
+            <option value="5">5 porciones</option>
+            <option value="6">6+ porciones</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="horario">Horario</label>
+          <select id="horario" required>
+            <option value="" disabled selected>Seleccionar</option>
+            <option value="12:00 - 13:00">12:00 – 13:00</option>
+            <option value="13:00 - 14:00">13:00 – 14:00</option>
+            <option value="14:00 - 15:00">14:00 – 15:00</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="notas">Notas</label>
+        <textarea id="notas" rows="2" placeholder="Alguna especificación..."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.162-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+        </svg>
+        <span>Enviar por WhatsApp</span>
+      </button>
+    </form>
+
+    <div class="ordenar-contact">
+      <p>¿Prefieres llamarnos?</p>
+      <a href={`https://wa.me/${phoneNumber}`}>918 380 045</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ordenar {
+    padding: var(--space-4xl) var(--space-lg);
+    background: var(--color-bg-primary);
+  }
+
+  .ordenar-inner {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .ordenar-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .ordenar-label {
+    display: block;
+    font-size: 0.6875rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .ordenar-header h2 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: var(--space-xs);
+  }
+
+  .ordenar-header p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Form */
+  .ordenar-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-md);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--color-text);
+    transition: border-color 0.2s;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .form-hint {
+    font-size: 0.6875rem;
+    color: var(--color-text-tertiary);
+  }
+
+  /* Submit */
+  .form-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    background: var(--color-success);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: var(--space-md);
+    border: none;
+    border-radius: var(--radius-sm);
+    margin-top: var(--space-sm);
+    transition: all 0.2s var(--ease-smooth);
+  }
+
+  .form-submit:hover {
+    background: #5D8A66;
+    transform: translateY(-1px);
+  }
+
+  /* Contact */
+  .ordenar-contact {
+    text-align: center;
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .ordenar-contact p {
+    font-size: 0.8125rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .ordenar-contact a {
+    font-size: 0.9375rem;
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 500px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script define:vars={{ phoneNumber }}>
+  const form = document.getElementById('orderForm');
+  const ZONAS = ['lince', 'san isidro', 'jesús maría', 'jesus maria', 'cercado'];
+
+  form?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const direccion = document.getElementById('direccion').value.trim();
+    const cantidad = document.getElementById('cantidad').value;
+    const horario = document.getElementById('horario').value;
+    const notas = document.getElementById('notas').value.trim();
+    
+    const dirLower = direccion.toLowerCase();
+    const zonaValida = ZONAS.some(z => dirLower.includes(z));
+    
+    if (!zonaValida) {
+      alert('Solo delivery en Lince, San Isidro, Jesús María y Cercado');
+      return;
+    }
+    
+    let msg = `🍲 *PEDIDO - SHAMBAR LINCE*\n\n`;
+    msg += `• Nombre: ${nombre}\n`;
+    msg += `• Teléfono: +51 ${telefono}\n`;
+    msg += `• Dirección: ${direccion}\n`;
+    msg += `• Porciones: ${cantidad}\n`;
+    msg += `• Horario: ${horario}\n`;
+    if (notas) msg += `• Notas: ${notas}\n`;
+    msg += `\n¡Gracias! 🙏`;
+    
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+</script>

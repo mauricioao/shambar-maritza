@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shambar Maritza - El plato tradicional limeño. Precompra ahora y disfruta del auténtico Shambar en Lince, San Isidro, Jesús María y Cercado.">
+  <title>Shambar Maritza | Tradición Limeña</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-icon">🍲</span>
+        <span class="logo-text">Shambar <em>Maritza</em></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link">Inicio</a></li>
+        <li><a href="#about" class="nav-link">El Shambar</a></li>
+        <li><a href="#zonas" class="nav-link">Zonas</a></li>
+        <li><a href="#horarios" class="nav-link">Horarios</a></li>
+        <li><a href="#ordenar" class="nav-link btn-nav">Ordenar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-video-container">
+      <video class="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%230D0D0D' width='1920' height='1080'/%3E%3C/svg%3E">
+        <source src="assets/shambar-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal-item">✨ Plato Icono de Lima</div>
+      <h1 class="hero-title reveal-item">
+        <span class="title-line">El Auténtico</span>
+        <span class="title-main">SHAMBAR</span>
+        <span class="title-line">de Maritza</span>
+      </h1>
+      <p class="hero-tagline reveal-item">Tradición limeña que se sirve en cada hogar</p>
+      <div class="hero-cta reveal-item">
+        <a href="#ordenar" class="btn-primary">
+          <span>Pre-ordenar Ahora</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#about" class="btn-secondary">
+          <span>Descubre la tradición</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+    <div class="hero-decorations">
+      <div class="deco-pattern deco-1"></div>
+      <div class="deco-pattern deco-2"></div>
+      <div class="deco-ember ember-1"></div>
+      <div class="deco-ember ember-2"></div>
+      <div class="deco-ember ember-3"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-image reveal-left">
+          <div class="image-frame">
+            <div class="image-placeholder">
+              <i class="fas fa-utensils"></i>
+              <span>Tu foto del Shambar</span>
+            </div>
+            <div class="image-accent"></div>
+          </div>
+        </div>
+        <div class="about-content reveal-right">
+          <span class="section-badge">Historia & Tradición</span>
+          <h2 class="section-title">El Plato que<br><em>Une Familias</em></h2>
+          <div class="about-text">
+            <p>El <strong>Shambar</strong> es mucho más que un plato: es una tradición que se remonta a las fondas del Centro de Lima. Preparado con cuidado y dedicación, cada porción lleva el sabor de la cocina limeña auténtica.</p>
+            <p>Maritza prepara su Shambar con los ingredientes más frescos, siguiendo la receta que ha pasado de generación en generación. Un plato que trasciende el tiempo y mantiene viva la esencia de nuestra gastronomía.</p>
+          </div>
+          <div class="about-features">
+            <div class="feature-item">
+              <i class="fas fa-clock"></i>
+              <span>Preparación artesanal</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-heart"></i>
+              <span>Receta familiar</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Delivery en zona</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-bg-pattern"></div>
+  </section>
+
+  <!-- Zonas Section -->
+  <section class="zonas" id="zonas">
+    <div class="section-container">
+      <div class="section-header reveal-up">
+        <span class="section-badge">Zona de Reparto</span>
+        <h2 class="section-title">Llegamos a <em>Tu Casa</em></h2>
+        <p class="section-subtitle">Te llevamos el Shambar directamente a tu puerta</p>
+      </div>
+      <div class="zonas-map reveal-up">
+        <div class="map-container">
+          <svg class="map-svg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <rect x="0" y="0" width="400" height="300" fill="#1A1512" rx="12"/>
+            
+            <!-- Zone: Lince (Central) -->
+            <circle cx="200" cy="150" r="45" class="zone zone-lince"/>
+            <text x="200" y="155" class="zone-label">Lince</text>
+            
+            <!-- Zone: San Isidro (North) -->
+            <ellipse cx="200" cy="75" rx="35" ry="25" class="zone zone-san-isidro"/>
+            <text x="200" y="78" class="zone-label-small">San Isidro</text>
+            
+            <!-- Zone: Jesús María (West) -->
+            <ellipse cx="110" cy="150" rx="30" ry="40" class="zone zone-jesus-maria"/>
+            <text x="110" y="155" class="zone-label-small">Jesús María</text>
+            
+            <!-- Zone: Cercado (South) -->
+            <ellipse cx="200" cy="230" rx="40" ry="25" class="zone zone-cercado"/>
+            <text x="200" y="233" class="zone-label-small">Cercado</text>
+            
+            <!-- Connecting lines -->
+            <line x1="200" y1="105" x2="200" y2="125" class="zone-line"/>
+            <line x1="140" y1="150" x2="165" y2="150" class="zone-line"/>
+            <line x1="200" y1="195" x2="200" y2="205" class="zone-line"/>
+            
+            <!-- Center point -->
+            <circle cx="200" cy="150" r="8" class="zone-center"/>
+          </svg>
+          <div class="map-legend">
+            <div class="legend-item">
+              <span class="legend-dot lince"></span>
+              <span>Lince</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot san-isidro"></span>
+              <span>San Isidro</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot jesus-maria"></span>
+              <span>Jesús María</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot cercado"></span>
+              <span>Cercado (norte)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="zonas-info reveal-up">
+        <div class="info-card">
+          <i class="fas fa-shipping-fast"></i>
+          <h3>Delivery Gratis</h3>
+          <p>En todas las zonas de reparto</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-clock"></i>
+          <h3>Entrega Programada</h3>
+          <p>Eliges el horario que más te convenga</p>
+        </div>
+        <div class="info-card">
+          <i class="fas fa-phone-alt"></i>
+          <h3>Contacto Directo</h3>
+          <p>Coordinamos personalmente tu pedido</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Horarios Section -->
+  <section class="horarios" id="horarios">
+    <div class="section-container">
+      <div class="section-header reveal-up">
+        <span class="section-badge">Horario de Reparto</span>
+        <h2 class="section-title">Elige tu <em>Momento</em></h2>
+        <p class="section-subtitle">三 horarios disponibles para el almuerzo</p>
+      </div>
+      <div class="horarios-grid">
+        <div class="horario-card reveal-up" style="animation-delay: 0.1s">
+          <div class="horario-icon">
+            <i class="fas fa-sun"></i>
+          </div>
+          <div class="horario-time">12:00 - 13:00</div>
+          <h3 class="horario-title">Primer Turno</h3>
+          <p class="horario-desc">El Shambar fresco y listo para el inicio del almuerzo</p>
+          <span class="horario-status available">Disponible</span>
+        </div>
+        <div class="horario-card reveal-up" style="animation-delay: 0.2s">
+          <div class="horario-icon">
+            <i class="fas fa-sun"></i>
+          </div>
+          <div class="horario-time">13:00 - 14:00</div>
+          <h3 class="horario-title">Segundo Turno</h3>
+          <p class="horario-desc">El momento perfecto para el almuerzo</p>
+          <span class="horario-status available">Disponible</span>
+        </div>
+        <div class="horario-card reveal-up" style="animation-delay: 0.3s">
+          <div class="horario-icon">
+            <i class="fas fa-sun"></i>
+          </div>
+          <div class="horario-time">14:00 - 15:00</div>
+          <h3 class="horario-title">Tercer Turno</h3>
+          <p class="horario-desc">Para quienes almuerzan un poco más tarde</p>
+          <span class="horario-status available">Disponible</span>
+        </div>
+      </div>
+    </div>
+    <div class="horarios-bg">
+      <div class="bg-pattern"></div>
+    </div>
+  </section>
+
+  <!-- Ordenar Section -->
+  <section class="ordenar" id="ordenar">
+    <div class="section-container">
+      <div class="ordenar-content">
+        <div class="ordenar-info reveal-left">
+          <span class="section-badge">Pre-orden</span>
+          <h2 class="section-title">Tu Shambar<br><em>en 3 pasos</em></h2>
+          <div class="steps-list">
+            <div class="step-item">
+              <span class="step-number">01</span>
+              <div class="step-content">
+                <h4>Llena el formulario</h4>
+                <p>Ingresa tus datos y horario preferido</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-number">02</span>
+              <div class="step-content">
+                <h4>Envía tu pedido</h4>
+                <p>Te redirigimos a WhatsApp con tu orden</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <span class="step-number">03</span>
+              <div class="step-content">
+                <h4>Recibe en casa</h4>
+                <p>Coordinamos la entrega en tu horario</p>
+              </div>
+            </div>
+          </div>
+          <div class="ordenar-note">
+            <i class="fas fa-info-circle"></i>
+            <span>Después de enviar, te contactaremos para confirmar tu pedido</span>
+          </div>
+        </div>
+        <div class="ordenar-form-container reveal-right">
+          <form class="order-form" id="orderForm">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Ej: Carlos Mendoza" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <div class="input-with-prefix">
+                <span class="input-prefix">+51</span>
+                <input type="tel" id="telefono" name="telefono" placeholder="918 380 045" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="direccion">Dirección de entrega</label>
+              <input type="text" id="direccion" name="direccion" placeholder="Av. ejemplos 123, Lince" required>
+              <span class="form-hint">Solo deliveramos en Lince, San Isidro, Jesús María y Cercado norte</span>
+            </div>
+            <div class="form-group">
+              <label for="cantidad">Cantidad de porciones</label>
+              <select id="cantidad" name="cantidad" required>
+                <option value="" disabled selected>Selecciona cantidad</option>
+                <option value="1">1 porción</option>
+                <option value="2">2 porciones</option>
+                <option value="3">3 porciones</option>
+                <option value="4">4 porciones</option>
+                <option value="5">5 porciones</option>
+                <option value="6">6 porciones (familia)</option>
+                <option value="7">7+ porciones (contactar)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="horario">Horario preferido</label>
+              <select id="horario" name="horario" required>
+                <option value="" disabled selected>Selecciona horario</option>
+                <option value="12:00 - 13:00">12:00 - 13:00 (primer turno)</option>
+                <option value="13:00 - 14:00">13:00 - 14:00 (segundo turno)</option>
+                <option value="14:00 - 15:00">14:00 - 15:00 (tercer turno)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="notas">Notas adicionales (opcional)</label>
+              <textarea id="notas" name="notas" rows="2" placeholder="Alguna especificación especial..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              <i class="fab fa-whatsapp"></i>
+              <span>Enviar pedido por WhatsApp</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto Directo -->
+  <section class="contacto-directo">
+    <div class="contacto-content">
+      <h3>¿Prefieres contactar directamente?</h3>
+      <p>Escríbenos y coordinamos tu pedido</p>
+      <a href="https://wa.me/51918380045" class="btn-whatsapp" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+        <span>918 380 045</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="logo-icon">🍲</span>
+        <span class="logo-text">Shambar <em>Maritza</em></span>
+        <p>Tradición limeña en cada porción</p>
+      </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/51918380045" class="footer-link" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          <span>918 380 045</span>
+        </a>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 Shambar Maritza. Todos los derechos reservados.</p>
+        <p class="footer-location">🍴 Serving Lince, San Isidro, Jesús María y Cercado</p>
+      </div>
+    </div>
+    <div class="footer-decor">
+      <div class="decor-line"></div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/51918380045" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="floating-tooltip">¡Ordena ahora!</span>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

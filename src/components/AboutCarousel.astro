@@ -1,0 +1,370 @@
+---
+const labels = ['El Shambar', 'Ingredientes', 'Cortes'];
+
+const baseSlides = [
+  {
+    id: 'shambar',
+    image: '/assets/shambar_03.png',
+    title: 'El Shambar',
+    subtitle: 'Tradición limeña',
+    content: 'El Shambar es mucho más que un plato: es una tradición que se remonta a las fondas del Centro de Lima. Preparado con cuidado y dedicación, cada porción lleva el sabor de la cocina limeña auténtica.',
+    features: ['Preparación artesanal', 'Ingredientes frescos', 'Receta familiar'],
+    imagePosition: 'left'
+  },
+  {
+    id: 'ingredientes',
+    image: '/assets/ingredientes_01.png',
+    title: 'Ingredientes',
+    subtitle: 'Calidad supreme',
+    content: 'Cada componente es seleccionado cuidadosamente. El caldo se prepara con huesos de res, las carnes incluyen pato, charque, menudencia y panceta. Completamos con cebolleta china, legumbres, limón y sal. La cancha serrana goldeniana complementa la experiencia.',
+    features: ['Caldo de huesos', 'Carnes selectas', 'Verduras frescas', 'Cancha serrana'],
+    imagePosition: 'right'
+  },
+  {
+    id: 'cortes',
+    image: '/assets/cortes_chancho_01.png',
+    title: 'Cortes',
+    subtitle: 'Sabores diversos',
+    content: 'El shambar incluye diversos cortes de cerdo. El pellejo aporta textura crujiente, el jamón aporta sabor ahumado, y el chorizo agrega especias artesanales. Cada corte aporta su personalidad al plato. *Sujeto a cambios según disponibilidad.',
+    features: ['Pellejo de chancho', 'Jamón', 'Chorizo artesanal', '*Sujeto a cambios'],
+    imagePosition: 'left'
+  }
+];
+
+// Duplicar primer slide para loop infinito suave
+const slides = [...baseSlides, baseSlides[0]];
+---
+
+<div class="about-carousel" id="about">
+  <div class="carousel-container">
+    <div class="carousel-track" id="track">
+      {slides.map((slide, index) => (
+        <div class="slide" data-index={index} data-position={slide.imagePosition}>
+          {slide.image ? (
+            <div class={`slide-visual ${slide.imagePosition}`}>
+              <img src={slide.image} alt={slide.title} />
+            </div>
+          ) : (
+            <div class={`slide-visual empty ${slide.imagePosition}`}>
+              <span class="visual-icon">🍲</span>
+            </div>
+          )}
+          
+          <div class={`slide-info ${slide.imagePosition === 'right' ? 'text-first' : ''}`}>
+            <span class="slide-label">{slide.subtitle}</span>
+            <h2 class="slide-title">{slide.title}</h2>
+            <p class="slide-content">{slide.content}</p>
+            
+            {slide.features && (
+              <div class="slide-features">
+                {slide.features.map((f) => (
+                  <span class="feature-item">
+                    <span class="feature-dot"></span>
+                    {f}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="carousel-nav">
+    {labels.map((label, index) => (
+      <button class="nav-pill" data-index={index}>
+        <span class="pill-dot"></span>
+        <span class="pill-text">{label}</span>
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+  .about-carousel {
+    padding: var(--space-3xl) var(--space-lg);
+    background: var(--color-bg-primary);
+  }
+
+  .carousel-container {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    padding: var(--space-lg);
+  }
+
+  /* Posición de imagen alternada */
+  .slide[data-position="right"] {
+    grid-template-columns: 1fr 280px;
+  }
+
+  .slide[data-position="right"] .slide-visual {
+    order: 2;
+  }
+
+  .slide[data-position="right"] .slide-info {
+    order: 1;
+  }
+
+  /* Visual - Imagen 9:16 */
+  .slide-visual {
+    width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+    transition: opacity 0.6s ease;
+  }
+
+  .slide-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-visual.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-bg-secondary), var(--color-bg-card));
+  }
+
+  .visual-icon {
+    font-size: 4rem;
+    opacity: 0.4;
+  }
+
+  /* Info */
+  .slide-info {
+    padding: var(--space-md) 0;
+    transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .slide-label {
+    display: block;
+    font-size: 0.625rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .slide-title {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .slide-content {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    max-width: 480px;
+  }
+
+  .slide-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .feature-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--color-text);
+    background: var(--color-bg-secondary);
+    padding: 6px 12px;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--color-border);
+  }
+
+  .feature-dot {
+    width: 5px;
+    height: 5px;
+    background: var(--color-accent);
+    border-radius: 50%;
+  }
+
+  /* Navigation */
+  .carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+  }
+
+  .nav-pill:hover {
+    background: var(--color-bg-secondary);
+  }
+
+  .pill-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-text-tertiary);
+    transition: all 0.3s ease;
+  }
+
+  .nav-pill.active .pill-dot,
+  .nav-pill:hover .pill-dot {
+    background: var(--color-accent);
+  }
+
+  .pill-text {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    transition: color 0.3s ease;
+  }
+
+  .nav-pill:hover .pill-text,
+  .nav-pill.active .pill-text {
+    color: var(--color-text);
+  }
+
+  /* Mobile */
+  @media (max-width: 700px) {
+    .slide {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .slide[data-position="right"] {
+      grid-template-columns: 1fr;
+    }
+
+    .slide[data-position="right"] .slide-visual {
+      order: 1;
+    }
+
+    .slide[data-position="right"] .slide-info {
+      order: 2;
+    }
+
+    .slide-visual {
+      aspect-ratio: 16/9;
+      max-height: 220px;
+    }
+
+    .slide-title {
+      font-size: 1.5rem;
+    }
+
+    .pill-text {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const track = document.getElementById('track');
+  const pills = document.querySelectorAll('.nav-pill');
+  const slides = document.querySelectorAll('.slide');
+  const originalCount = 3;
+  let current = 0;
+  let isTransitioning = false;
+
+  function goTo(index: number, isAutoPlay = false) {
+    if (isTransitioning) return;
+    
+    // Si vamos a pasar del slide 4 (copia) al reset, esperar a que termine la transición
+    if (current === originalCount && index === 0) {
+      // Ya estamos en la copia, no hacer nada hasta que termine la transición
+      return;
+    }
+    
+    // Si estamos en el slide 3 (Cortes) e intentamos avanzar manualmente
+    if (current === originalCount - 1 && index === originalCount && isAutoPlay) {
+      // Ir al slide 4 (copia del 1) - transición visible
+      isTransitioning = true;
+      current = index;
+      
+      if (track) {
+        track.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+      
+      pills.forEach((pill, i) => {
+        pill.classList.toggle('active', i === 0); // Primer pill activo
+      });
+      
+      // Cuando termina la transición, resetear instantáneamente al slide 1
+      setTimeout(() => {
+        if (track) {
+          track.style.transition = 'none';
+          track.style.transform = 'translateX(0)';
+        }
+        current = 0;
+        isTransitioning = false;
+      }, 800);
+      
+      return;
+    }
+
+    isTransitioning = true;
+    current = index;
+    
+    if (track) {
+      track.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+    
+    pills.forEach((pill, i) => {
+      pill.classList.toggle('active', i === index);
+    });
+
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 800);
+  }
+
+  pills.forEach((pill, i) => {
+    pill.addEventListener('click', () => goTo(i, false));
+  });
+
+  setInterval(() => {
+    const next = current + 1;
+    
+    // Si estamos en Cortes (índice 2), ir a la copia del primer slide
+    if (current === originalCount - 1) {
+      goTo(originalCount, true);
+    } else if (next < originalCount) {
+      goTo(next, true);
+    }
+  }, 8000);
+
+  goTo(0);
+</script>

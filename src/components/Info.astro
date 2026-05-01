@@ -1,0 +1,152 @@
+---
+const zonas = [
+  { name: 'Lince', icon: '◉' },
+  { name: 'San Isidro', icon: '◉' },
+  { name: 'Jesús María', icon: '◉' },
+  { name: 'Cercado norte', icon: '◉' },
+];
+
+const horarios = [
+  { time: '12:00 - 13:00', label: 'Primer turno' },
+  { time: '13:00 - 14:00', label: 'Segundo turno' },
+  { time: '14:00 - 15:00', label: 'Tercer turno' },
+];
+---
+
+<section class="info" id="zonas">
+  <div class="info-container">
+    <!-- Zonas -->
+    <div class="info-section">
+      <span class="section-label">Delivery</span>
+      <h3>Zonas de reparto</h3>
+      
+      <div class="zonas-grid">
+        {zonas.map((zona) => (
+          <div class="zona-item">
+            <span class="zona-icon">{zona.icon}</span>
+            <span class="zona-name">{zona.name}</span>
+          </div>
+        ))}
+      </div>
+      
+      <p class="info-note">Delivery sin costo adicional en estas zonas</p>
+    </div>
+
+    <!-- Horarios -->
+    <div class="info-section">
+      <span class="section-label">Horario</span>
+      <h3>Horarios de entrega</h3>
+      
+      <div class="horarios-list">
+        {horarios.map((horario) => (
+          <div class="horario-item">
+            <span class="horario-time">{horario.time}</span>
+            <span class="horario-label">{horario.label}</span>
+          </div>
+        ))}
+      </div>
+      
+      <p class="info-note">Almuerzo disponible solo en estos horarios</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .info {
+    padding: var(--space-9) var(--space-5);
+    background: var(--color-bg-secondary);
+  }
+
+  .info-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .info-section {
+    padding: var(--space-6);
+  }
+
+  .section-label {
+    display: block;
+    font-family: var(--font-accent);
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-3);
+  }
+
+  .info-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: var(--space-5);
+  }
+
+  /* Zonas */
+  .zonas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+  }
+
+  .zona-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .zona-icon {
+    color: var(--color-accent);
+    font-size: 0.5rem;
+  }
+
+  .zona-name {
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+
+  /* Horarios */
+  .horarios-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .horario-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .horario-time {
+    font-family: var(--font-accent);
+    font-size: 0.9rem;
+    color: var(--color-text);
+  }
+
+  .horario-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Note */
+  .info-note {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .info-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,6 +1,8 @@
 [build]
-  command = "npm run build"
+  command = "pnpm run build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "22"
+  PNPM_FLAGS = "--ignore-scripts=false"
+  NPM_CONFIG_IGNORE_SCRIPTS = "false"

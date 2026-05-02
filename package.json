@@ -3,10 +3,11 @@
   "type": "module",
   "version": "1.0.0",
   "description": "Web de precompra de Shambar - Plato típico limeño",
+  "packageManager": "pnpm@10.33.2",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm install && npm exec astro build",
+    "build": "pnpm exec astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
